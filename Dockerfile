@@ -20,7 +20,7 @@ RUN mkdir $HOME/.android && \
     echo 'count=0' > $HOME/.android/repositories.cfg}
 
 # Install Deps
-RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y --force-yes expect git wget && apt-get clean && rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y --force-yes expect git wget unzip && apt-get clean && rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN wget --output-document=android-sdk.zip https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip && \
      mkdir $PWD/android-sdk-linux && \

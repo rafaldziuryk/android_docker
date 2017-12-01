@@ -26,7 +26,7 @@ RUN wget --output-document=android-sdk.zip https://dl.google.com/android/reposit
      mkdir $PWD/android-sdk-linux && \
      unzip -qq android-sdk.zip -d $PWD/android-sdk-linux && \
      export ANDROID_HOME=$PWD/android-sdk-linux && \
-     export PATH=$PATH:$ANDROID_HOME/platform-tools/
+     export PATH=$PATH:$ANDROID_HOME/platform-tools/ && \
      echo y | $ANDROID_HOME/tools/bin/sdkmanager --update  && \
      echo y | $ANDROID_HOME/tools/bin/sdkmanager 'tools' && \
      echo y | $ANDROID_HOME/tools/bin/sdkmanager 'platform-tools' && \

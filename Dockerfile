@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Piotr Ciastko <ciaasteczkowy@gmail.com>
+MAINTAINER Rafał Dziuryk <rafaldziuryk@gmail.com>
 
 ENV ANDROID_COMPILE_SDK: 25
 ENV ANDROID_BUILD_TOOLS: 25.0.3
@@ -22,7 +22,7 @@ RUN mkdir $HOME/.android && \
 # Install Deps
 RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y --force-yes expect git wget && apt-get clean && rm -fr /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN wget --output-document=android-sdk.zip https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
+RUN wget --output-document=android-sdk.zip https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip && \
      mkdir $PWD/android-sdk-linux && \
      unzip -qq android-sdk.zip -d $PWD/android-sdk-linux && \
      export ANDROID_HOME=$PWD/android-sdk-linux && \
